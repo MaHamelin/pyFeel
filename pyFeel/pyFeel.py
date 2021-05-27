@@ -32,7 +32,7 @@ class Feel():
         scriptpath = os.path.dirname(__file__)
         dict_name = os.path.join(scriptpath, 'feel.npy')
 
-        self.dict = np.load(dict_name).item()
+        self.dict = np.load(dict_name, allow_pickle = True).item()
         self.token = [word for word in word_tokenize(text.lower())]
         self.sentiment = {}
         self.number_emotion = 7
